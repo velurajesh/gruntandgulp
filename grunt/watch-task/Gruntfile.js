@@ -1,0 +1,44 @@
+module.exports = function(grunt) {
+
+  grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+
+        sass: {
+          dist: {
+            files: {
+              'css/style.css' : 'sass/style.scss'
+            }
+          }
+        },
+
+        watch: {target: {
+            files: ["css/*.css"],
+            tasks: ['cssmin']
+            }
+
+        },
+        cssmin: {
+                 combine: {
+                           files: {
+                                  'css/combined.css': ['css/custom.css', 'css/menu.css']
+                                  }
+                          }
+                },
+
+        uglify: {
+                options: {
+                          mangle: false
+                         },
+                target: {
+                          files: {
+                         'js/combined.min.js': ['js/dropdown.js','js/util.js']
+                                 }
+                           }
+                }
+  });
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.registerTask('default',['watch']);
+}

@@ -8,3 +8,24 @@ body {
 p {
   color: $primaryColor;
 }
+
+div{
+	color:blue;
+		h1{
+			color:red;
+			background: $primaryColor;
+
+		}
+		h2{ text-decoration: underline;
+			color:$primaryColor;}
+
+}
+
+h4{
+	color:red;
+	float:left;
+		span{
+			background: yellow;
+		}
+
+}

@@ -4,4 +4,19 @@ body {
 p {
   color: #eeccff; }
 
+div {
+  color: blue; }
+  div h1 {
+    color: red;
+    background: #eeccff; }
+  div h2 {
+    text-decoration: underline;
+    color: #eeccff; }
+
+h4 {
+  color: red;
+  float: left; }
+  h4 span {
+    background: yellow; }
+
 /*# sourceMappingURL=style.css.map */
